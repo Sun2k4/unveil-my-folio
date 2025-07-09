@@ -26,8 +26,8 @@ const Hero = () => {
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">
               Xin chào, tôi là
-              <span className="block text-gradient bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-                Nguyễn Văn A
+              <span className="block text-gradient bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent font-bold">
+                Nguyễn Tuấn Anh
               </span>
             </h1>
             
@@ -66,8 +66,8 @@ const Hero = () => {
               <div className="absolute inset-0 bg-white/20 rounded-full blur-2xl transform scale-110"></div>
               <img
                 src={heroImage}
-                alt="Nguyễn Văn A"
-                className="relative w-full h-auto rounded-full shadow-elegant hover-lift transition-spring"
+                alt="Nguyễn Tuấn Anh"
+                className="relative w-full aspect-square rounded-full object-cover shadow-elegant hover-lift transition-spring"
               />
             </div>
           </div>

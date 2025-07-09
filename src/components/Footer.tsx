@@ -7,7 +7,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: Github, href: "#", label: "GitHub" },
     { icon: Linkedin, href: "#", label: "LinkedIn" }, 
-    { icon: Mail, href: "mailto:hello@nguyenvana.dev", label: "Email" }
+    { icon: Mail, href: "mailto:hello@nguyentuananh.dev", label: "Email" }
   ];
 
   const scrollToTop = () => {
@@ -22,7 +22,7 @@ const Footer = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             {/* Brand */}
             <div>
-              <h3 className="font-bold text-xl mb-4">Nguyễn Văn A</h3>
+              <h3 className="font-bold text-xl mb-4">Nguyễn Tuấn Anh</h3>
               <p className="text-muted-foreground mb-4">
                 Full-stack Developer & UI/UX Designer chuyên tạo ra những sản phẩm số 
                 đẹp và hiệu quả.
@@ -79,7 +79,7 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold mb-4">Liên hệ</h4>
               <div className="space-y-2 text-muted-foreground">
-                <p>📧 hello@nguyenvana.dev</p>
+                <p>📧 hello@nguyentuananh.dev</p>
                 <p>📱 +84 123 456 789</p>
                 <p>📍 Hồ Chí Minh, Việt Nam</p>
               </div>
@@ -89,7 +89,7 @@ const Footer = () => {
           {/* Bottom Footer */}
           <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-center md:text-left">
-              © {currentYear} Nguyễn Văn A. Được thiết kế với{" "}
+              © {currentYear} Nguyễn Tuấn Anh. Được thiết kế với{" "}
               <Heart className="inline h-4 w-4 text-red-500 mx-1" />
               bằng React & Tailwind CSS
             </p>
