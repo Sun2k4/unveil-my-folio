@@ -11,8 +11,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "hello@nguyenvana.dev",
-      link: "mailto:hello@nguyenvana.dev"
+      value: "tanh0411k4@gmail.com",
+      link: "mailto:tanh0411k4@gmail.com"
     },
     {
       icon: Phone,
@@ -23,7 +23,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Địa chỉ",
-      value: "Hồ Chí Minh, Việt Nam",
+      value: "Bắc Từ Liêm, Hà Nội",
       link: "#"
     }
   ];

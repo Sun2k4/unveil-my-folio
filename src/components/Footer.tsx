@@ -79,9 +79,9 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold mb-4">Liên hệ</h4>
               <div className="space-y-2 text-muted-foreground">
-                <p>📧 hello@nguyentuananh.dev</p>
+                <p>📧 tanh0411k4@gmail.com</p>
                 <p>📱 +84 123 456 789</p>
-                <p>📍 Hồ Chí Minh, Việt Nam</p>
+                <p>📍 Hà Nội, Việt Nam</p>
               </div>
             </div>
           </div>

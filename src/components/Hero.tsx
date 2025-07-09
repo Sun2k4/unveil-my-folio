@@ -26,7 +26,7 @@ const Hero = () => {
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">
               Xin chào, tôi là
-              <span className="block text-gradient bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent font-bold">
+              <span className="block text-blue-300 font-bold">
                 Nguyễn Tuấn Anh
               </span>
             </h1>
@@ -41,10 +41,12 @@ const Hero = () => {
                 <Mail className="mr-2 h-5 w-5" />
                 Liên hệ với tôi
               </Button>
-              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 transition-spring">
-                <Download className="mr-2 h-5 w-5" />
-                Tải CV
-              </Button>
+              <a href="/CV_Nguyen_Tuan_Anh.pdf" download>
+                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 transition-spring">
+                  <Download className="mr-2 h-5 w-5" />
+                  Tải CV
+                </Button>
+              </a>
             </div>
             
             <div className="flex gap-4 justify-center lg:justify-start">
