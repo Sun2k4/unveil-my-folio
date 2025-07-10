@@ -5,8 +5,20 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
+import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const contactInfo = [
     {
       icon: Mail,
@@ -27,6 +39,64 @@ const Contact = () => {
       link: "#"
     }
   ];
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      toast({
+        title: "Lỗi",
+        description: "Vui lòng điền đầy đủ thông tin",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from('contacts')
+        .insert([{
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        }]);
+
+      if (error) throw error;
+
+      toast({
+        title: "Thành công!",
+        description: "Tin nhắn của bạn đã được gửi. Tôi sẽ phản hồi sớm nhất có thể."
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Lỗi",
+        description: "Có lỗi xảy ra khi gửi tin nhắn. Vui lòng thử lại.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="contact" className="py-24 section-gradient">
@@ -56,35 +126,68 @@ const Contact = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Họ tên</Label>
-                    <Input id="name" placeholder="Nhập họ tên của bạn" />
+                <form onSubmit={handleSubmit}>
+                  <div className="grid md:grid-cols-2 gap-4 mb-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Họ tên</Label>
+                      <Input 
+                        id="name" 
+                        name="name"
+                        placeholder="Nhập họ tên của bạn" 
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email</Label>
+                      <Input 
+                        id="email" 
+                        name="email"
+                        type="email" 
+                        placeholder="your@email.com" 
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                      />
+                    </div>
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="your@email.com" />
+                  
+                  <div className="space-y-2 mb-6">
+                    <Label htmlFor="subject">Chủ đề</Label>
+                    <Input 
+                      id="subject" 
+                      name="subject"
+                      placeholder="Chủ đề tin nhắn" 
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      required
+                    />
                   </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="subject">Chủ đề</Label>
-                  <Input id="subject" placeholder="Chủ đề tin nhắn" />
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="message">Tin nhắn</Label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="Chia sẻ ý tưởng của bạn..."
-                    className="min-h-32"
-                  />
-                </div>
-                
-                <Button className="w-full transition-spring" size="lg">
-                  <Send className="h-4 w-4 mr-2" />
-                  Gửi tin nhắn
-                </Button>
+                  
+                  <div className="space-y-2 mb-6">
+                    <Label htmlFor="message">Tin nhắn</Label>
+                    <Textarea 
+                      id="message" 
+                      name="message"
+                      placeholder="Chia sẻ ý tưởng của bạn..."
+                      className="min-h-32"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
+                    />
+                  </div>
+                  
+                  <Button 
+                    type="submit" 
+                    className="w-full transition-spring" 
+                    size="lg"
+                    disabled={isSubmitting}
+                  >
+                    <Send className="h-4 w-4 mr-2" />
+                    {isSubmitting ? "Đang gửi..." : "Gửi tin nhắn"}
+                  </Button>
+                </form>
               </CardContent>
             </Card>
 
