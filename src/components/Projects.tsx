@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Eye } from "lucide-react";
+import { ExternalLink, Github, Eye, Link } from "lucide-react";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
@@ -24,7 +24,7 @@ const Projects = () => {
       description: "Ứng dụng mua sắm di động được phát triển với React Native. Giao diện đẹp, hiệu suất cao và trải nghiệm người dùng mượt mà.",
       image: project2,
       technologies: ["React Native", "Firebase", "Redux", "Stripe"],
-      demoUrl: "#",
+      demoUrl: "https://gemini.google.com/app/cd7d3ade7b375a98",
       githubUrl: "#",
       category: "Mobile App"
     },
@@ -70,14 +70,18 @@ const Projects = () => {
                   />
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                     <div className="flex gap-3">
-                      <Button size="sm" variant="secondary" className="hover-glow">
+                     <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                      <Button size="sm" variant="secondary" className="hover-glow" >
                         <Eye className="h-4 w-4 mr-2" />
                         Xem demo
                       </Button>
+                    </a>
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                       <Button size="sm" variant="secondary" className="hover-glow">
                         <Github className="h-4 w-4 mr-2" />
                         Code
                       </Button>
+                     </a>
                     </div>
                   </div>
                   <Badge className="absolute top-4 left-4 bg-primary">
