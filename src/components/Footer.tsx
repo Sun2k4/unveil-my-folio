@@ -80,7 +80,7 @@ const Footer = () => {
               <h4 className="font-semibold mb-4">Liên hệ</h4>
               <div className="space-y-2 text-muted-foreground">
                 <p>📧 tanh0411k4@gmail.com</p>
-                <p>📱 +84 123 456 789</p>
+                <p>📱 +84 85 226288</p>
                 <p>📍 Hà Nội, Việt Nam</p>
               </div>
             </div>

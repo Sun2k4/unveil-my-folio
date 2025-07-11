@@ -262,7 +262,7 @@ const Contact = () => {
                     <Phone className="h-5 w-5 mr-2" />
                     Gọi ngay
                   </Button>
-                  <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 transition-spring">
+                  <Button size="lg" variant="secondary" className="transition-spring">
                     <Mail className="h-5 w-5 mr-2" />
                     Gửi email
                   </Button>
