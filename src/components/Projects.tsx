@@ -14,8 +14,8 @@ const Projects = () => {
       description: "Hệ thống quản lý bán hàng trực tuyến với React, Node.js và MongoDB. Tính năng bao gồm quản lý sản phẩm, đơn hàng, thống kê doanh thu.",
       image: project1,
       technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
-      demoUrl: "https://ecommerce-dashboard-demo.vercel.app",
-      githubUrl: "https://github.com/tuananhnguyen/ecommerce-dashboard",
+      demoUrl: "https://unveil-my-folio.onrender.com",
+      githubUrl: "https://github.com/Sun2k4/unveil-my-folio",
       category: "Web Application"
     },
     {
@@ -24,8 +24,8 @@ const Projects = () => {
       description: "Ứng dụng mua sắm di động được phát triển với React Native. Giao diện đẹp, hiệu suất cao và trải nghiệm người dùng mượt mà.",
       image: project2,
       technologies: ["React Native", "Firebase", "Redux", "Stripe"],
-      demoUrl: "https://play.google.com/store/apps/details?id=com.shoppingapp",
-      githubUrl: "https://github.com/tuananhnguyen/mobile-shopping-app",
+      demoUrl: "https://unveil-my-folio.onrender.com",
+      githubUrl: "https://github.com/Sun2k4/unveil-my-folio",
       category: "Mobile App"
     },
     {
@@ -34,8 +34,8 @@ const Projects = () => {
       description: "Website doanh nghiệp hiện đại với Next.js và Sanity CMS. Tối ưu SEO, tốc độ tải nhanh và responsive hoàn hảo.",
       image: project3,
       technologies: ["Next.js", "Sanity CMS", "Vercel", "TypeScript"],
-      demoUrl: "https://corporate-website-demo.vercel.app",
-      githubUrl: "https://github.com/tuananhnguyen/corporate-website",
+      demoUrl: "https://unveil-my-folio.onrender.com",
+      githubUrl: "https://github.com/Sun2k4/unveil-my-folio",
       category: "Website"
     }
   ];
