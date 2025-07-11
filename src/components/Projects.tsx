@@ -14,8 +14,8 @@ const Projects = () => {
       description: "Hệ thống quản lý bán hàng trực tuyến với React, Node.js và MongoDB. Tính năng bao gồm quản lý sản phẩm, đơn hàng, thống kê doanh thu.",
       image: project1,
       technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
-      demoUrl: "#",
-      githubUrl: "#",
+      demoUrl: "https://ecommerce-dashboard-demo.vercel.app",
+      githubUrl: "https://github.com/tuananhnguyen/ecommerce-dashboard",
       category: "Web Application"
     },
     {
@@ -24,8 +24,8 @@ const Projects = () => {
       description: "Ứng dụng mua sắm di động được phát triển với React Native. Giao diện đẹp, hiệu suất cao và trải nghiệm người dùng mượt mà.",
       image: project2,
       technologies: ["React Native", "Firebase", "Redux", "Stripe"],
-      demoUrl: "#",
-      githubUrl: "#",
+      demoUrl: "https://play.google.com/store/apps/details?id=com.shoppingapp",
+      githubUrl: "https://github.com/tuananhnguyen/mobile-shopping-app",
       category: "Mobile App"
     },
     {
@@ -34,8 +34,8 @@ const Projects = () => {
       description: "Website doanh nghiệp hiện đại với Next.js và Sanity CMS. Tối ưu SEO, tốc độ tải nhanh và responsive hoàn hảo.",
       image: project3,
       technologies: ["Next.js", "Sanity CMS", "Vercel", "TypeScript"],
-      demoUrl: "#",
-      githubUrl: "#",
+      demoUrl: "https://corporate-website-demo.vercel.app",
+      githubUrl: "https://github.com/tuananhnguyen/corporate-website",
       category: "Website"
     }
   ];
@@ -68,13 +68,23 @@ const Projects = () => {
                     alt={project.title}
                     className="w-full h-64 object-cover transition-all duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                     <div className="flex gap-3">
-                      <Button size="sm" variant="secondary" className="hover-glow">
+                      <Button 
+                        size="sm" 
+                        variant="secondary" 
+                        className="hover-glow"
+                        onClick={() => window.open(project.demoUrl, '_blank')}
+                      >
                         <Eye className="h-4 w-4 mr-2" />
                         Xem demo
                       </Button>
-                      <Button size="sm" variant="outline" className="border-white text-white hover:bg-white hover:text-black">
+                      <Button 
+                        size="sm" 
+                        variant="outline" 
+                        className="border-white text-white hover:bg-white hover:text-black"
+                        onClick={() => window.open(project.githubUrl, '_blank')}
+                      >
                         <Github className="h-4 w-4 mr-2" />
                         Code
                       </Button>
@@ -100,11 +110,19 @@ const Projects = () => {
                   </div>
                   
                   <div className="flex gap-3">
-                    <Button size="sm" className="flex-1">
+                    <Button 
+                      size="sm" 
+                      className="flex-1"
+                      onClick={() => window.open(project.demoUrl, '_blank')}
+                    >
                       <ExternalLink className="h-4 w-4 mr-2" />
                       Live Demo
                     </Button>
-                    <Button size="sm" variant="outline">
+                    <Button 
+                      size="sm" 
+                      variant="outline"
+                      onClick={() => window.open(project.githubUrl, '_blank')}
+                    >
                       <Github className="h-4 w-4" />
                     </Button>
                   </div>
