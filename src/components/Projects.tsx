@@ -14,8 +14,8 @@ const Projects = () => {
       description: "Hệ thống quản lý bán hàng trực tuyến với React, Node.js và MongoDB. Tính năng bao gồm quản lý sản phẩm, đơn hàng, thống kê doanh thu.",
       image: project1,
       technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
-      demoUrl: "#",
-      githubUrl: "#",
+      demoUrl: "https://unveil-my-folio.onrender.com",
+      githubUrl: "#https://github.com/Sun2k4/unveil-my-folio",
       category: "Web Application"
     },
     {
@@ -74,7 +74,7 @@ const Projects = () => {
                         <Eye className="h-4 w-4 mr-2" />
                         Xem demo
                       </Button>
-                      <Button size="sm" variant="outline" className="border-white text-white hover:bg-white hover:text-black">
+                      <Button size="sm" variant="secondary" className="hover-glow">
                         <Github className="h-4 w-4 mr-2" />
                         Code
                       </Button>
