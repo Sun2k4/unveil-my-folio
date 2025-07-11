@@ -15,7 +15,7 @@ const Projects = () => {
       image: project1,
       technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
       demoUrl: "https://unveil-my-folio.onrender.com",
-      githubUrl: "#https://github.com/Sun2k4/unveil-my-folio",
+      githubUrl: "https://github.com/Sun2k4/unveil-my-folio",
       category: "Web Application"
     },
     {
