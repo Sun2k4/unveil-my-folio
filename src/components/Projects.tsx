@@ -46,92 +46,75 @@ const Projects = () => {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in-up">
-            <Badge variant="outline" className="mb-4">
-              Dự án
+            <Badge variant="outline" className="mb-4 border-primary/50 text-primary font-semibold">
+              My Portfolio
             </Badge>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              Các dự án <span className="text-gradient">nổi bật</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Các dự án <span className="text-gradient">tâm huyết</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Khám phá những dự án tôi đã thực hiện, từ web applications đến mobile apps, 
-              mỗi dự án đều được thiết kế và phát triển với sự tận tâm cao nhất.
+              Đây là những sản phẩm mà tôi đã dành nhiều thời gian và tâm huyết để xây dựng, thể hiện kỹ năng và đam mê của tôi trong lĩnh vực phát triển phần mềm.
             </p>
           </div>
 
           {/* Projects Grid */}
-          <div className="grid lg:grid-cols-2 gap-8 mb-12">
-            {projects.map((project, index) => (
-              <Card key={project.id} className="overflow-hidden shadow-card hover-lift transition-spring group">
-                <div className="relative overflow-hidden">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {projects.map((project) => (
+              <Card key={project.id} className="bg-card border shadow-card hover-lift transition-spring group flex flex-col">
+                <div className="relative overflow-hidden rounded-t-lg">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-64 object-cover transition-all duration-500 group-hover:scale-110"
+                    className="w-full h-52 object-cover transition-all duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                    <div className="flex gap-3">
-                     <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                      <Button size="sm" variant="secondary" className="hover-glow" >
-                        <Eye className="h-4 w-4 mr-2" />
-                        Xem demo
-                      </Button>
-                    </a>
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Button size="sm" variant="secondary" className="hover-glow">
-                        <Github className="h-4 w-4 mr-2" />
-                        Code
-                      </Button>
-                     </a>
-                    </div>
-                  </div>
-                  <Badge className="absolute top-4 left-4 bg-primary">
+                  <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground font-semibold">
                     {project.category}
                   </Badge>
                 </div>
                 
-                <CardHeader>
+                <CardHeader className="flex-grow">
                   <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
-                  <p className="text-muted-foreground">{project.description}</p>
+                  <p className="text-muted-foreground text-sm flex-grow">{project.description}</p>
                 </CardHeader>
                 
                 <CardContent>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech) => (
-                      <Badge key={tech} variant="secondary" className="text-xs">
+                      <Badge key={tech} variant="secondary" className="text-xs font-medium">
                         {tech}
                       </Badge>
                     ))}
                   </div>
                   
-                  <div className="flex gap-3">
-                    <Button size="sm" className="flex-1">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Live Demo
-                    </Button>
-                    <Button size="sm" variant="outline">
-                      <Github className="h-4 w-4" />
-                    </Button>
+                  <div className="flex gap-3 mt-auto">
+                    <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <Button size="sm" className="w-full transition-spring hover:bg-primary/90 shadow-elegant">
+                        <Eye className="h-4 w-4 mr-2" />
+                        Xem Demo
+                      </Button>
+                    </a>
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <Button size="icon" variant="outline" className="transition-spring hover:bg-secondary">
+                        <Github className="h-5 w-5" />
+                      </Button>
+                    </a>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          {/* Featured Project */}
-          <Card className="shadow-card card-gradient">
-            <CardContent className="p-8">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-4">Có dự án thú vị?</h3>
-                <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  Tôi luôn sẵn sàng hợp tác trong các dự án mới, đặc biệt là những ý tưởng sáng tạo 
-                  và có tác động tích cực đến cộng đồng.
-                </p>
-                <Button size="lg" className="transition-spring">
-                  Thảo luận dự án
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+          {/* Call to Action */}
+          <div className="text-center">
+            <h3 className="text-2xl font-bold mb-4">Bạn có một ý tưởng tuyệt vời?</h3>
+            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+              Tôi rất mong được lắng nghe và cùng bạn biến ý tưởng đó thành hiện thực. Đừng ngần ngại liên hệ!
+            </p>
+            <Button size="lg" className="transition-spring shadow-elegant hover-glow">
+              <Link className="mr-2 h-5 w-5" />
+              Bắt đầu một dự án
+            </Button>
+          </div>
         </div>
       </div>
     </section>
